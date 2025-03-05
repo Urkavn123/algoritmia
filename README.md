@@ -85,17 +85,17 @@ algoritmo programa
  Entero: num1
  Entero: num2
 inicio
-    escribir "Ingrese el primer número: "
+    mostrar "Ingrese el primer número: "
     leer num1
-    escribir "Ingrese el segundo número: "
+    mostrar "Ingrese el segundo número: "
     leer num2
     si num1 > num2 entonces
-        escribir "El primer número es el mayor."
+        mostrar "El primer número es el mayor."
     si_no
         si num1 < num2 entonces
-            escribir "El primer número es el más pequeño."
+            mostrar "El primer número es el más pequeño."
         si_no
-            escribir "Ambos números son iguales.
+            mostrar "Ambos números son iguales.
     fin_si
 fin
 4.3
@@ -105,11 +105,11 @@ entero: num2
 entero: num3
 entero: central
 inicio
-    escribir "ingrese el primer número: "
+    mostrar "ingrese el primer número: "
     leer num1
-    escribir "ingrese el segundo número: "
+    mostrar "ingrese el segundo número: "
     leer num2
-    escribir "ingrese el tercer número: "
+    mostrar "ingrese el tercer número: "
     leer num3
     si (num1 > num2 y num1 < num3) o (num1 > num3 y num1 < num2) entonces
         central <- num1
@@ -119,4 +119,71 @@ inicio
         si_no
             central <- num3
         fin si
+fin
+4.4
+algoritmo raiz_cuadrada
+real: numero
+real: raiz
+inicio
+    mostrar "ingrese un numero"
+    leer numero
+    si numero >= 0 entonces
+       raiz <- raiz_cuadrada(numero)
+       mostrar "la raiz cuadrada es:" , raiz
+    si_no
+       mostrar "no se puede calcular la raiz cuadrada de un numero negativo"
+    fin_si
+fin
+4.5
+algoritmo par
+entero num
+inicio
+    mostrar "ingrese un numero: " 
+    leer num
+    si num mod 2 == 0 entonces
+       mostrar "el numero es par"
+    si_no 
+       mostrar "el numero no es par"
+    fin_si
+fin
+4.6
+algoritmo fecha 
+entero:dia
+entero: mes 
+entero: año
+inicio 
+    mostrar "ingrese el dia: "
+    leer dia
+    mostrar "ingrese el mes: "
+    leer mes 
+    mostrar "ingrese el año: "
+    si (mes == 1 o mes  == 3 o mes == 5 o mes == 7 o mes == 8 o mes == 10) y dia == 31 entonces
+       dia <- 1
+       mes <- mes + 1
+    si_no 
+       si (mes == 4 o mes == 6 o mes == 9 o mes == 11) y dia == 30 entonces 
+          dia <- 1
+          mes <- mes + 1
+       si_no
+          si mes == 2 entonces
+             si (año mod 4 == 0 y año mod 100 ≠ 0) o (año mod 400 = 0) entonces 
+                si dia == 29 y mes == 2 entonces
+                   dia <- 1 
+                   mes <- 3
+                si_no 
+                   dia <- dia + 1
+                   fi_si
+                fin_si
+            si_no
+                si mes == 12 y dia == 31 entonces
+                   dia <- 1
+                   mes <- 1 
+                   año <- año + 1 
+                si_no
+                   dia <- dia + 1
+                fin_si
+            fin_si
+        fin_si
+    fin_si
+    mostrar "la fecha del dua siguiente es: ", dia, "/", mes "/", "/" año
 fin
