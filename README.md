@@ -29,7 +29,7 @@ inicio
 fin
 ![Captura de pantalla 2025-03-04 180351](https://github.com/user-attachments/assets/17da2aec-6d25-455e-ac7c-2632c81cf8fb)
 C)
-Algoritmo  el_número_es_positivo
+Algoritmo  el_número_es_positivo 
 var 
     entero: total_positivos
     entero: total_negativos
@@ -186,4 +186,97 @@ inicio
         fin_si
     fin_si
     mostrar "la fecha del dua siguiente es: ", dia, "/", mes "/", "/" año
+fin
+4.7 
+algoritmo peso_de_alumnos
+enteros i
+enteros n
+inicio
+    menos_40 <- 0
+    entre_40_50 <- 0
+    entre_50_60 <- 0
+    mas_60 = 0
+    mostrar "Ingrese la cantidad de alumnos:"
+    para i = 1 hasta n hacer
+        mostrar  "Ingrese el peso del alumno ", i, ":"
+        leer peso
+        
+        si peso < 40 entonces
+            menos_40 <- menos_40 + 1
+        si_no
+            si peso >= 40 y peso <= 50 entonces
+                entre_40_50 <- entre_40_50 + 1
+            si_no
+                si peso > 50 y peso < 60 entonces
+                    entre_50_60 <- entre_50_60 + 1
+                si_no
+                    mas_60 = mas_60 + 1
+                fin si
+            fin si
+        fin si
+    fin para
+    mostrar "Estadística de pesos:"
+    mostrar "Alumnos de menos de 40 kg: ", menos_40
+    mostrar "Alumnos entre 40 y 50 kg: ", entre_40_50
+    mostrar "Alumnos de más de 50 kg y menos de 60 kg: ", entre_50_60
+    mostrar "Alumnos de más o igual a 60 kg: ", mas_60
+fin
+4.8
+algoritmo numero_divisible
+entero num1
+entero num2
+inicio
+    mostrar "Ingrese el primer número:"
+    leer num1
+    mostrar "Ingrese el segundo número:"
+    leer num2
+    si num1 mod num2 == 0 entonces
+        mostrar num2, " es divisor de ", num1
+    si_no
+        si num2 mod num1 == 0 entonces
+            mostrar num1, " es divisor de ", num2
+        si_no
+            mostrar "Ninguno de los números es divisor del otro."
+        fin si
+    fin si
+fin
+4.9
+algoritmo angulo_obtuso_y_agudo
+entero angulo
+inicio
+    mostrar "Ingrese el valor del ángulo en grados:"
+    leer angulo
+    si angulo < 90 entonces
+        escribir "El ángulo es agudo."
+    si_no
+        si angulo == 90 entonces
+            escribir "El ángulo es recto."
+        si_no
+            escribir "El ángulo es obtuso."
+        fin si
+    fin si
+fin
+4.10
+algoritmo calificacion
+entero calificacion
+inicio  
+    mostrar "Ingrese la calificación numérica (0-100):"
+    leer calificacion
+    si calificacion >= 90 entonces
+        mostrar "La calificación en letra es: A"
+    si_no
+        si calificacion >= 80 entonces
+            mostrar "La calificación en letra es: B"
+        si_no
+            si calificacion >= 70 entonces
+                mostrar "La calificación en letra es: C"
+            si_no
+                si calificacion >= 69 entonces
+                    mostrar "La calificación en letra es: D"
+                si_no
+                    mostrar "La calificación en letra es: F"
+                fin si
+            fin si
+        fin si
+    fin si
 fin
