@@ -103,26 +103,20 @@ algoritmo numero_central
 entero: num1
 entero: num2
 entero: num3
+entero: central
 inicio
     escribir "ingrese el primer número: "
     leer num1
-
     escribir "ingrese el segundo número: "
     leer num2
-
     escribir "ingrese el tercer número: "
     leer num3
-
     si (num1 > num2 y num1 < num3) o (num1 > num3 y num1 < num2) entonces
-        central ← num1
+        central <- num1
     si_no
         si (num2 > num1 y num2 < num3) o (num2 > num3 y num2 < num1) entonces
-            central ← num2
+            central <- num2
         si_no
-            central ← num3
+            central <- num3
         fin si
-    fin si
-
-    escribir "el número central es: ", central
-
 fin
